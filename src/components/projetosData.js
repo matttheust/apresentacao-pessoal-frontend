@@ -1,24 +1,8 @@
-const projetos = [
-  {
-    titulo: 'Projeto 1',
-    descricao: 'Descrição do projeto 1.',
-    link: 'https://linkdoproj1.com'
-  },
-  {
-    titulo: 'Projeto 2',
-    descricao: 'Descrição do projeto 2.',
-    link: 'https://linkdoproj2.com'
-  },
-  {
-    titulo: 'Projeto 3',
-    descricao: 'Descrição do projeto 3.',
-    link: 'https://linkdoproj3.com'
-  },
-  {
-    titulo: 'Projeto 4',
-    descricao: 'Descrição do projeto 4.',
-    link: 'https://linkdoproj4.com'
-  },
+const projetosData = [
+  { id: 1, name: 'Projeto 1', description: 'Descrição do Projeto 1' },
+  { id: 2, name: 'Projeto 2', description: 'Descrição do Projeto 2' },
+  { id: 3, name: 'Projeto 3', description: 'Descrição do Projeto 3' },
+  // Adicione mais projetos conforme necessário
 ];
 
-export default projetos;
+export default projetosData;

@@ -1,30 +1,26 @@
 import React from 'react';
-import projetos from './projetosData';
+import { Link } from 'react-router-dom';
+import projetosData from '../components/projetosData'; // Importando os dados dos projetos
 
-function Projetos() {
+
+const Projetos = () => {
+  const projects = projetosData; // Usando os dados importados
+
   return (
-    <section id="projetos" className="mb-10 p-5 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-semibold text-blue-600 mb-4">Meus Projetos</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {projetos.map((projeto, index) => (
-          <div key={index} className="p-4 bg-gray-100 rounded-lg shadow-sm">
-            <h3 className="text-xl font-semibold text-gray-800">{projeto.titulo}</h3>
-            <p className="text-gray-700">{projeto.descricao}</p>
-            {projeto.link && (
-              <a
-                href={projeto.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:underline"
-              >
-                Saiba mais
-              </a>
-            )}
-          </div>
+    <div className="my-5">
+      <h2 className="text-2xl font-bold mb-4">Meus Projetos</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {projects.map((project) => (
+          <Link to={`/project/${project.id}`} key={project.id} className="block p-4 border rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="card-content">
+              <h3 className="text-xl font-semibold">{project.name}</h3>
+              <p className="text-gray-600">{project.description}</p>
+            </div>
+          </Link>
         ))}
       </div>
-    </section>
+    </div>
   );
-}
+};
 
 export default Projetos;
